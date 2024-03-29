@@ -1,5 +1,6 @@
 const express = require("express");
 const mongoose = require("mongoose");
+const path = require('path'); 
 const bodyParser = require("body-parser");
 const dotenv=require("dotenv");
 
@@ -7,7 +8,7 @@ dotenv.config();
 const app = express();
 // var items=["Buy Food","Cook Food","Eat Food"];
 // let workItems=[];
-
+app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
 
 app.use(bodyParser.urlencoded({ extended: true }));
